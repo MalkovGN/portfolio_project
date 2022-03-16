@@ -9,3 +9,8 @@ def home(request):
 
 def all_blogs(request):
     return render(request, 'blog/all_blogs.html')
+
+
+def news(requests):
+    return render(requests, 'news/news_page.html')
+
