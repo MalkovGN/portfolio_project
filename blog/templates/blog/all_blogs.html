@@ -9,7 +9,7 @@
 
 {% for b in blogs %}
 
-<h2 style="color:Blue">{{ b.title }}</h2>
+<a href="{% url 'detail' b.id %}"><h2 style="color:Blue">{{ b.title }}</h2></a>
 <p style="color:Grey">{{ b.date }}</p>
 <p>{{ b.description }}</p>
 <br>
