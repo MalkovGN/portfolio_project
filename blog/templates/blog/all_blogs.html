@@ -8,21 +8,27 @@
     <h2>There is useful links and its' description</h2>
     <br>
 </div>
-
-<h2>I has written {{ blogs.count}} blog{{ blogs.count|pluralize }}</h2>
+<div class="container text-center">
+    <h2>I has written {{ blogs.count}} blog{{ blogs.count|pluralize }}</h2>
+</div>
+<br>
 
 {% for b in blogs %}
+    <div class="container text-center">
+        <a href="{% url 'blog:detail' b.id %}"><h2 style="color:black">{{ b.title }}</h2></a>
+        <p style="color:Grey">{{ b.date|date:'M d Y' }}</p>
+        <p>{{ b.description|safe|truncatechars:150 }}</p>
+        <br>
+        Источник: <a href="{{ b.url }}"><p>{{ b.url|truncatechars:30 }}</p></a>
 
-<a href="{% url 'blog:detail' b.id %}"><h2 style="color:Blue">{{ b.title }}</h2></a>
-<p style="color:Grey">{{ b.date|date:'M d Y' }}</p>
-<p>{{ b.description|safe|truncatechars:150 }}</p>
-<br>
-Источник: <a href="{{ b.url }}"><p>{{ b.url }}</p></a>
-
-<br>
-
+        <br>
+    </div>
 {% endfor %}
-
-<a href="{% url 'home' %}" class="btn btn-primary">Back to portfolio</a>
-
+<div class="container text-center">
+    <a href="{% url 'home' %}" class="btn btn-dark">Back to portfolio</a>
+</div>
 {% endblock %}
+
+<br>
+<br>
+<br>

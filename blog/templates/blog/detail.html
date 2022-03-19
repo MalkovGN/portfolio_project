@@ -12,6 +12,8 @@
 Источник: <a href="{{ blog.url }}"><p>{{ blog.url }}</p></a>
 <br>
 
-<a href="{% url 'blog:all_blogs' %}" class="btn btn-primary">Back to blogs page</a>
+<div class="container text-center">
+    <a href="{% url 'blog:all_blogs' %}" class="btn btn-dark">Back to blogs page</a>
+</div>
 
 {% endblock %}
